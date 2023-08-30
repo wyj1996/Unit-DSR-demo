@@ -43,947 +43,7 @@ audio {
     <li>The proposed method can be extended to other conversion task, such as speaker identity, emotion, speaking style and accent conversion, etc. </li> 
     <li>By replacing the proposed single-speaker TTS with multi-speaker TTS, the proposed system can generate the high-quality speech that preserves both speaker identity and content, which is our future work.</li>
   
-  <!-- MF -->
-    <h3>F05 (intelligibility-high):</h3>
-    <table border="1">
-    <tr>
-      <td>No.</td>
-      <td>Original</td>
-      <td>JDNMF</td>
-      <td>DBLSTM</td>
-      <td>ASR-TTS</td>
-      <td>Proposed</td>
-      <td>Text</td>
-    </tr>
-    <!-- MF 1 sample 4 pieces of audios  -->
-    <tr>
-      <td>1</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_CW77_M6_COULD_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_CW77_M6_COULD_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_CW77_M6_COULD_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_CW77_M6_COULD_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_CW77_M6_COULD_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>could</td>
-    </tr>
-
-    <tr>
-      <td>2</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_D3_M6_THREE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_D3_M6_THREE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_D3_M6_THREE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_D3_M6_THREE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_D3_M6_THREE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>three</td>
-    </tr>
-
-    <tr>
-      <td>3</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW13_M6_UNUSUAL_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW13_M6_UNUSUAL_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW13_M6_UNUSUAL_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW13_M6_UNUSUAL_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW13_M6_UNUSUAL_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>unusual</td>
-    </tr>
-
-    <tr>
-      <td>4</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_C9_M6_SHIFT_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_C9_M6_SHIFT_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_C9_M6_SHIFT_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_C9_M6_SHIFT_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_C9_M6_SHIFT_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>shift</td>
-    </tr>
-
-    <tr>
-      <td>5</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW79_M6_DURABLE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW79_M6_DURABLE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW79_M6_DURABLE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW79_M6_DURABLE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW79_M6_DURABLE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>durable</td>
-    </tr>
-
-    <tr>
-      <td>6</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW21_M6_ADVANTAGEOUS_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW21_M6_ADVANTAGEOUS_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW21_M6_ADVANTAGEOUS_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW21_M6_ADVANTAGEOUS_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW21_M6_ADVANTAGEOUS_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>advantageous</td>
-    </tr>
-
-    <tr>
-      <td>7</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW24_M6_ALOFT_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW24_M6_ALOFT_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW24_M6_ALOFT_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW24_M6_ALOFT_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW24_M6_ALOFT_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>aloft</td>
-    </tr>
-
-    <tr>
-      <td>8</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW7_M6_SCHOOLYARD_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW7_M6_SCHOOLYARD_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW7_M6_SCHOOLYARD_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW7_M6_SCHOOLYARD_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW7_M6_SCHOOLYARD_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>schoolyard</td>
-    </tr>
-
-    <tr>
-      <td>9</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW36_M6_AUTHORITATIVE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW36_M6_AUTHORITATIVE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW36_M6_AUTHORITATIVE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW36_M6_AUTHORITATIVE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW36_M6_AUTHORITATIVE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>authoritative</td>
-    </tr>
-
-    <tr>
-      <td>10</td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW63_M6_BULRUSH_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW63_M6_BULRUSH_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW63_M6_BULRUSH_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW63_M6_BULRUSH_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/F05/F05_B2_UW63_M6_BULRUSH_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>bulrush</td>
-    </tr>
-    </table>
-
-  <!-- FF -->
-  <h3>M05 (intelligibility-middle):</h3>
-    <table border="1">
-    <tr>
-      <td>No.</td>
-      <td>Original</td>
-      <td>JDNMF</td>
-      <td>DBLSTM</td>
-      <td>ASR-TTS</td>
-      <td>Proposed</td>
-      <td>Text</td>
-    </tr>
-    <!-- FF 1 sample 4 pieces of audios  -->
-    <tr>
-      <td>1</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C6_M6_ESCAPE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C6_M6_ESCAPE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C6_M6_ESCAPE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C6_M6_ESCAPE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C6_M6_ESCAPE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>escape</td>
-    </tr>
-
-    <tr>
-      <td><div id="eg1">2</div></td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LW_M6_WHISKEY_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LW_M6_WHISKEY_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LW_M6_WHISKEY_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LW_M6_WHISKEY_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LW_M6_WHISKEY_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>whiskey</td>
-    </tr>
-
-    <tr>
-      <td>3</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C16_M6_UPWARD_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C16_M6_UPWARD_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C16_M6_UPWARD_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C16_M6_UPWARD_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_C16_M6_UPWARD_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>upward</td>
-    </tr>
-
-    <tr>
-      <td><div id="eg2">4</div></td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW16_M6_ABLUTIONS_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW16_M6_ABLUTIONS_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW16_M6_ABLUTIONS_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW16_M6_ABLUTIONS_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW16_M6_ABLUTIONS_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>ablutions</td>
-    </tr>
-
-    <tr>
-      <td>5</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LU_M6_UNIFORM_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LU_M6_UNIFORM_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LU_M6_UNIFORM_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LU_M6_UNIFORM_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_LU_M6_UNIFORM_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>uniform</td>
-    </tr>
-
-    <tr>
-      <td>6</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW7_M6_SCHOOLYARD_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW7_M6_SCHOOLYARD_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW7_M6_SCHOOLYARD_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW7_M6_SCHOOLYARD_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW7_M6_SCHOOLYARD_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>schoolyard</td>
-    </tr>
-
-    <tr>
-      <td>7</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW25_M6_ALOOF_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW25_M6_ALOOF_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW25_M6_ALOOF_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW25_M6_ALOOF_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW25_M6_ALOOF_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>aloof</td>
-    </tr>
-
-    <tr>
-      <td>8</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW39_M6_BATHE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW39_M6_BATHE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW39_M6_BATHE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW39_M6_BATHE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW39_M6_BATHE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>bathe</td>
-    </tr>
-
-    <tr>
-      <td>9</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW32_M6_APPREHEND_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW32_M6_APPREHEND_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW32_M6_APPREHEND_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW32_M6_APPREHEND_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW32_M6_APPREHEND_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>apprehend</td>
-    </tr>
-
-    <tr>
-      <td>10</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW43_M6_BATTLESHIP_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW43_M6_BATTLESHIP_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW43_M6_BATTLESHIP_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW43_M6_BATTLESHIP_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M05/M05_B2_UW43_M6_BATTLESHIP_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>battleship</td>
-    </tr>
-    </table>
-
-    <!-- FM -->
-    <h3>M07 (intelligibility-low):</h3>
-    <table border="1">
-    <tr>
-      <td>No.</td>
-      <td>Original</td>
-      <td>JDNMF</td>
-      <td>DBLSTM</td>
-      <td>ASR-TTS</td>
-      <td>Proposed</td>
-      <td>Text</td>
-    </tr>
-    <!-- FF 1 sample 4 pieces of audios  -->
-    <tr>
-      <td>1</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C3_M6_DELETE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C3_M6_DELETE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C3_M6_DELETE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C3_M6_DELETE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C3_M6_DELETE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>delete</td>
-    </tr>
-
-    <tr>
-      <td>2</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C13_M6_PASTE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C13_M6_PASTE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C13_M6_PASTE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C13_M6_PASTE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_C13_M6_PASTE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>paste</td>
-    </tr>
-
-    <tr>
-      <td>3</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW60_M6_SOME_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW60_M6_SOME_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW60_M6_SOME_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW60_M6_SOME_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW60_M6_SOME_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>some</td>
-    </tr>
-
-    <tr>
-      <td>4</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW71_M6_WRITE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW71_M6_WRITE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW71_M6_WRITE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW71_M6_WRITE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_CW71_M6_WRITE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>write</td>
-    </tr>
-
-    <tr>
-      <td>5</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_LU_M6_UNIFORM_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_LU_M6_UNIFORM_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_LU_M6_UNIFORM_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_LU_M6_UNIFORM_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_LU_M6_UNIFORM_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>uniform</td>
-    </tr>
-
-    <tr>
-      <td>6</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW21_M6_ADVANTAGEOUS_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW21_M6_ADVANTAGEOUS_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW21_M6_ADVANTAGEOUS_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW21_M6_ADVANTAGEOUS_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW21_M6_ADVANTAGEOUS_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>advantageous</td>
-    </tr>
-
-    <tr>
-      <td>7</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW11_M6_SUPREME_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW11_M6_SUPREME_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW11_M6_SUPREME_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW11_M6_SUPREME_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW11_M6_SUPREME_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>supreme</td>
-    </tr>
-
-    <tr>
-      <td><div id="eg3">8</div></td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW17_M6_ABSOLVE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW17_M6_ABSOLVE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW17_M6_ABSOLVE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW17_M6_ABSOLVE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW17_M6_ABSOLVE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>absolve</td>
-    </tr>
-
-    <tr>
-      <td>9</td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW14_M6_VOYAGE_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW14_M6_VOYAGE_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW14_M6_VOYAGE_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW14_M6_VOYAGE_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW14_M6_VOYAGE_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>voyage</td>
-    </tr>
-
-    <tr>
-      <td><div id="eg4">10</div></td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW27_M6_ANXIETIES_ori.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW27_M6_ANXIETIES_JDNMF.wav" type="audio/wav">
-        </audio>
-      </td>  
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW27_M6_ANXIETIES_DBLSTM.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW27_M6_ANXIETIES_ASRTTS.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>
-        <audio controls>
-        <source src="./audios/M07/M07_B2_UW27_M6_ANXIETIES_TTSKD.wav" type="audio/wav">
-        </audio>
-      </td>
-      <td>anxieties</td>
-    </tr>
-    </table>
+  
 
     <!-- MM -->
     <h3>F03 (intelligibility-very low):</h3>
@@ -1002,27 +62,27 @@ audio {
       <td>1</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C8_M6_CONTROL_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C8_M6_CONTROL_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C8_M6_CONTROL_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C8_M6_CONTROL_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C8_M6_CONTROL_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C8_M6_CONTROL_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C8_M6_CONTROL_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C8_M6_CONTROL_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C8_M6_CONTROL_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C8_M6_CONTROL_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>control</td>
@@ -1032,27 +92,27 @@ audio {
       <td>2</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C12_M6_SENTENCE_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C12_M6_SENTENCE_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C12_M6_SENTENCE_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C12_M6_SENTENCE_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C12_M6_SENTENCE_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C12_M6_SENTENCE_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C12_M6_SENTENCE_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C12_M6_SENTENCE_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_C12_M6_SENTENCE_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_C12_M6_SENTENCE_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>senetence</td>
@@ -1062,27 +122,27 @@ audio {
       <td>3</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_LN_M6_NOVEMBER_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_LN_M6_NOVEMBER_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_LN_M6_NOVEMBER_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_LN_M6_NOVEMBER_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_LN_M6_NOVEMBER_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_LN_M6_NOVEMBER_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_LN_M6_NOVEMBER_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_LN_M6_NOVEMBER_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_LN_M6_NOVEMBER_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_LN_M6_NOVEMBER_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>November</td>
@@ -1092,27 +152,27 @@ audio {
       <td>4</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW9_M6_SKYWARD_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW9_M6_SKYWARD_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW9_M6_SKYWARD_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW9_M6_SKYWARD_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW9_M6_SKYWARD_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW9_M6_SKYWARD_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW9_M6_SKYWARD_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW9_M6_SKYWARD_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW9_M6_SKYWARD_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW9_M6_SKYWARD_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>skyward</td>
@@ -1122,27 +182,27 @@ audio {
       <td><div id="eg5">5</div></td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW26_M6_ALTHOUGH_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW26_M6_ALTHOUGH_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW26_M6_ALTHOUGH_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW26_M6_ALTHOUGH_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW26_M6_ALTHOUGH_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>although</td>
@@ -1152,27 +212,27 @@ audio {
       <td>6</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW39_M6_BATHE_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW39_M6_BATHE_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW39_M6_BATHE_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW39_M6_BATHE_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW39_M6_BATHE_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW39_M6_BATHE_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW39_M6_BATHE_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW39_M6_BATHE_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW39_M6_BATHE_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW39_M6_BATHE_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>bathe</td>
@@ -1182,27 +242,27 @@ audio {
       <td>7</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW81_M6_ENDOWMENTS_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW81_M6_ENDOWMENTS_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW81_M6_ENDOWMENTS_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW81_M6_ENDOWMENTS_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW81_M6_ENDOWMENTS_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>endowments</td>
@@ -1212,27 +272,27 @@ audio {
       <td>8</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW55_M6_BOTH_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW55_M6_BOTH_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW55_M6_BOTH_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW55_M6_BOTH_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW55_M6_BOTH_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW55_M6_BOTH_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW55_M6_BOTH_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW55_M6_BOTH_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW55_M6_BOTH_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW55_M6_BOTH_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>both</td>
@@ -1242,27 +302,27 @@ audio {
       <td><div id="eg6">9</div></td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW94_M6_FEATHER_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW94_M6_FEATHER_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW94_M6_FEATHER_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW94_M6_FEATHER_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW94_M6_FEATHER_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW94_M6_FEATHER_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW94_M6_FEATHER_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW94_M6_FEATHER_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW94_M6_FEATHER_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW94_M6_FEATHER_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>feather</td>
@@ -1272,27 +332,27 @@ audio {
       <td>10</td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW46_M6_BENGAL_ori.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW46_M6_BENGAL_ori.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW46_M6_BENGAL_JDNMF.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW46_M6_BENGAL_JDNMF.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW46_M6_BENGAL_DBLSTM.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW46_M6_BENGAL_DBLSTM.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW46_M6_BENGAL_ASRTTS.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW46_M6_BENGAL_ASRTTS.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./audios/F03/F03_B2_UW46_M6_BENGAL_TTSKD.wav" type="audio/wav">
+        <source src="./F03/F03_B2_UW46_M6_BENGAL_TTSKD.wav" type="audio/wav">
         </audio>
       </td>
       <td>bengal</td>
