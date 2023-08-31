@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>end-to-end dysarthric speech reconstruction</title>
+  <title>Unit-DSR: textless dysarthric speech reconstruction system by speech units and speech normalization.</title>
   <style>
 body {
   font-size: 20px;
@@ -16,45 +16,43 @@ audio {
 </style>
 </head>
 <body>
-    <h2>Audio samples: End-to-end voice conversion via cross-modal knowledge distillation for dysarthric speech reconstruction</h2>
-    <p><strong>Authors: </strong> Disong Wang, Jianwei Yu, Xixin Wu, Songxiang Liu, Lifa Sun, Xunying Liu and Helen Meng</p>
-    <!--<p><strong>Abstract: </strong> Dysarthric speech reconstruction (DSR) is a challenging task due to difficulties to repair unstable prosody and correct imprecise articulation. Inspired by the success of sequence-to-sequence (seq2seq) based text-to-speech (TTS) synthesis and knowledge distillation (KD) techniques, this paper proposes a novel end-to-end voice conversion (VC) method to tackle the reconstruction task. The proposed approach consists of three components. First, a seq2seq based TTS is first trained with the transcribed normal speech. Second, guided by the text-encoder of this trained TTS system, a teacher-student framework is proposed for cross-modal knowledge distillation (KD) by training a speech-encoder to extract appropriate linguistic representations from the transcribed dysarthric speech.  Third, the speech-encoder of the previous component is concatenated with the attention and decoder of the first component (TTS) to perform the DSR task, by directly mapping the dysarthric speech to its normal version.  Experiments demonstrate that the proposed method can generate the speech with high naturalness and intelligibility, where the comparison of human speech recognition between the reconstructed speech and the original dysarthric speech show that 35.4% and 48.7% absolute word error rate (WER) reduction can be achieved for dysarthric speakers with low and very low speech intelligibility, respectively.
--->
-  
+    <h2>Unit-DSR: textless dysarthric speech reconstruction through speech units and speech normalization</h2>
+    <p><strong>Authors: </strong>Yuejiao WANG, Disong Wang, Xixin Wu, Lingwei MENG, Helen MENG</p>
+    
   <hr>
 
     <h2>System comparison</h2>
     <li><strong>Original:</strong> Original dysarthric speech.</li>
-    <li><strong>JDNMF:</strong> Joint Dictionary learning Non-negative Matrix Factorization based VC.</li>
-    <li><strong>DBLSTM:</strong> Deep Bidirectional Long-Short Term Memory based VC.</li>
-    <li><strong>ASR-TTS:</strong> Employ the ASR to obtain the dysarthric speech recognition results, which are used as the inputs of the TTS to synthesize normal speech.</li>
-    <li><strong>Proposed:</strong> Proposed dysarthric speech reconstruction system.</li>
+    <li><strong>Reference:</strong> Reference control speech of CF02.</li>
+    <li><strong>E2E-DSR:</strong> End-to-end voice conversion via cross-modal knowledge distillation for dysarthric speech reconstruction.</li>
+    <li><strong>ASA-DSR:</strong> Speaker indentity preservation in dysarthric speech reconstruction by adversarial speaker adaptation. </li>
+    <li><strong>Unit-DSR (proposed):</strong> Proposed textless dysarthric speech reconstruction system by speech units and speech normalization. </li>
 
   <hr>
   
     <h2>Some additional observations and analysis</h2>
-    <li><strong>(1)</strong> The proposed method can effectively remove incorrect articulation repetitions, e.g., M05 speaker said 'whiskey key' for 'whiskey' and 'ab ablutions' for 'ablutions', the reconstructed speech has the correct articulations 'whiskey' and 'ablutions', please listen to <a href="#eg1">M05-No.2</a> and <a href="#eg2">M05-No.4</a> for more details.</li>
-    <li><strong>(2)</strong> Compared with the ASR-TTS, the proposed method preserves more similiar content with the original speech, please listen to <a href="#eg3">M07-No.8</a>, <a href="#eg4">M07-No.10</a>, <a href="#eg5">F03-No.5</a> and <a href="#eg6">F03-No.9</a> for more details. For ASR-TTS, when the ASR results are wrong, the TTS generates the speech with totally wrong content. However, the proposed method can extract and use the apropriate linguistic representations to generate the speech with more original content preservations, thus the recontructed speech sounds more like original content.</li>
+    <li><strong>(1)</strong> The proposed method can effectively </li>
+    <li><strong>(2)</strong> Compared with the ASR-TTS </li>
   
   <hr>
 
     <h2>Dysarthric speech reconstruction for different speakers</h2>
-    <li>4 dysarthric speakers from 4 groups with different speech intelligibility are used for experiments: F05(high), M05(mid), M07(low), F03(very low). 'F' and 'M' denote female and male respectively.</li>
-    <li>The proposed method can be extended to other conversion task, such as speaker identity, emotion, speaking style and accent conversion, etc. </li> 
-    <li>By replacing the proposed single-speaker TTS with multi-speaker TTS, the proposed system can generate the high-quality speech that preserves both speaker identity and content, which is our future work.</li>
+    <li>4 dysarthric speakers with different speech intelligibility are used for experiments: F04(mid), M05(mid), M07(low), F02(low). 'F' and 'M' denote female and male respectively.</li>
+    
+    <li>By replacing the target speaker code, The proposed multi-speaker unit-HiFiGAN vocoder can generate the high-quality speech with different speaker identity. And in this demo page, the target speaker of the unit vocoder is CF02. </li>
   
   
 
     <!-- MM -->
-    <h3>F03 (intelligibility-very low):</h3>
+    <h3>M05 (intelligibility-mid):</h3>
     <table border="1">
     <tr>
       <td>No.</td>
       <td>Original</td>
-      <td>JDNMF</td>
-      <td>DBLSTM</td>
-      <td>ASR-TTS</td>
-      <td>Proposed</td>
+      <td>Reference</td>
+      <td>E2E-DSR</td>
+      <td>ASA-DSR</td>
+      <td>Unit-DSR</td>
       <td>Text</td>
     </tr>
     <!-- FF 1 sample 4 pieces of audios  -->
@@ -62,302 +60,1868 @@ audio {
       <td>1</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C8_M6_CONTROL_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_advantageous.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C8_M6_CONTROL_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_advantageous.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C8_M6_CONTROL_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_advantageous.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C8_M6_CONTROL_ASRTTS.wav" type="audio/wav">
+        <source src="demo_wavs/M05/asa_advantageous.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C8_M6_CONTROL_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_advantageous.wav" type="audio/wav">
         </audio>
       </td>
-      <td>control</td>
+      <td>advantageous</td>
     </tr>
 
     <tr>
       <td>2</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C12_M6_SENTENCE_ori.wav" type="audio/wav">
+        <source src=".demo_wavs/M05/original_backspace.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C12_M6_SENTENCE_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_backspace.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C12_M6_SENTENCE_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_backspace.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C12_M6_SENTENCE_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_backspace.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_C12_M6_SENTENCE_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_backspace.wav" type="audio/wav">
         </audio>
       </td>
-      <td>senetence</td>
+      <td>backspace</td>
     </tr>
 
     <tr>
       <td>3</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_LN_M6_NOVEMBER_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_chair.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_LN_M6_NOVEMBER_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_chair.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_LN_M6_NOVEMBER_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_chair.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_LN_M6_NOVEMBER_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_chair.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_LN_M6_NOVEMBER_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_chair.wav" type="audio/wav">
         </audio>
       </td>
-      <td>November</td>
+      <td>chair</td>
     </tr>
 
     <tr>
       <td>4</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW9_M6_SKYWARD_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_command.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW9_M6_SKYWARD_JDNMF.wav" type="audio/wav">
+        <source src="././demo_wavs/M05/ref_command.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW9_M6_SKYWARD_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_command.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW9_M6_SKYWARD_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_command.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW9_M6_SKYWARD_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_command.wav" type="audio/wav">
         </audio>
       </td>
-      <td>skyward</td>
+      <td>command</td>
     </tr>
 
     <tr>
       <td><div id="eg5">5</div></td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_ori.wav" type="audio/wav">
+        <source src="" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_delete.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_delete.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_delete.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW26_M6_ALTHOUGH_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_delete.wav" type="audio/wav">
         </audio>
       </td>
-      <td>although</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_delete.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>delete</td>
     </tr>
 
     <tr>
       <td>6</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW39_M6_BATHE_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_downward.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW39_M6_BATHE_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_downward.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW39_M6_BATHE_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_downward.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW39_M6_BATHE_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_downward.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW39_M6_BATHE_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_downward.wav" type="audio/wav">
         </audio>
       </td>
-      <td>bathe</td>
+      <td>downward</td>
     </tr>
 
     <tr>
       <td>7</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_escape.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_escape.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_escape.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_escape.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW81_M6_ENDOWMENTS_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_escape.wav" type="audio/wav">
         </audio>
       </td>
-      <td>endowments</td>
+      <td>escape</td>
     </tr>
 
     <tr>
       <td>8</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW55_M6_BOTH_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_hotel.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW55_M6_BOTH_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_hotel.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW55_M6_BOTH_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_hotel.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW55_M6_BOTH_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_hotel.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW55_M6_BOTH_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_hotel.wav" type="audio/wav">
         </audio>
       </td>
-      <td>both</td>
+      <td>hotel</td>
     </tr>
 
     <tr>
       <td><div id="eg6">9</div></td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW94_M6_FEATHER_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_rabbit.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW94_M6_FEATHER_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_rabbit.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW94_M6_FEATHER_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_rabbit.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW94_M6_FEATHER_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_rabbit.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW94_M6_FEATHER_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_rabbit.wav" type="audio/wav">
         </audio>
       </td>
-      <td>feather</td>
+      <td>rabbit</td>
     </tr>
 
     <tr>
       <td>10</td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW46_M6_BENGAL_ori.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/original_sentence.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW46_M6_BENGAL_JDNMF.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ref_sentence.wav" type="audio/wav">
         </audio>
       </td>  
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW46_M6_BENGAL_DBLSTM.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/ee_sentence.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW46_M6_BENGAL_ASRTTS.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/asa_sentence.wav" type="audio/wav">
         </audio>
       </td>
       <td>
         <audio controls>
-        <source src="./F03/F03_B2_UW46_M6_BENGAL_TTSKD.wav" type="audio/wav">
+        <source src="./demo_wavs/M05/unit_sentence.wav" type="audio/wav">
         </audio>
       </td>
-      <td>bengal</td>
+      <td>sentence</td>
     </tr> 
+
+    <tr>
+      <td>11</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/original_unusual.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ref_unusual.wav" type="audio/wav">
+        </audio>
+      </td>  
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ee_unusual.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/asa_unusual.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_unusual.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>unusual</td>
+    </tr> 
+
+    <tr>
+      <td>12</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/original_upward.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ref_upward.wav" type="audio/wav">
+        </audio>
+      </td>  
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ee_upward.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/asa_upward.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_upward.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>upward</td>
+    </tr> 
+
+    <tr>
+      <td>13</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/original_watches.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ref_watches.wav" type="audio/wav">
+        </audio>
+      </td>  
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ee_watches.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/asa_watches.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_watches.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>watches</td>
+    </tr> 
+
+    <tr>
+      <td>14</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/original_xray.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ref_xray.wav" type="audio/wav">
+        </audio>
+      </td>  
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ee_xray.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/asa_xray.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_xray.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>xray</td>
+    </tr> 
+
+    <tr>
+      <td>15</td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/original_yankee.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ref_yankee.wav" type="audio/wav">
+        </audio>
+      </td>  
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/ee_yankee.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/asa_yankee.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>
+        <audio controls>
+        <source src="./demo_wavs/M05/unit_yankee.wav" type="audio/wav">
+        </audio>
+      </td>
+      <td>yankee</td>
+    </tr> 
+
     </table>
+
+  <!-- MM -->
+  <h3>F04 (intelligibility-mid):</h3>
+  <table border="1">
+  <tr>
+    <td>No.</td>
+    <td>Original</td>
+    <td>Reference</td>
+    <td>E2E-DSR</td>
+    <td>ASA-DSR</td>
+    <td>Unit-DSR</td>
+    <td>Text</td>
+  </tr>
+  <!-- FF 1 sample 4 pieces of audios  -->
+  <tr>
+    <td>1</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="demo_wavs/F04/asa_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>advantageous</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>
+      <audio controls>
+      <source src=".demo_wavs/F04/original_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_backspace.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>backspace</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_chair.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_chair.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_chair.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_chair.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_chair.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>chair</td>
+  </tr>
+
+  <tr>
+    <td>4</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="././demo_wavs/F04/ref_command.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>command</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg5">5</div></td>
+    <td>
+      <audio controls>
+      <source src="" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_delete.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>delete</td>
+  </tr>
+
+  <tr>
+    <td>6</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_downward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>downward</td>
+  </tr>
+
+  <tr>
+    <td>7</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_escape.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>escape</td>
+  </tr>
+
+  <tr>
+    <td>8</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_hotel.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>hotel</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg6">9</div></td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>rabbit</td>
+  </tr>
+
+  <tr>
+    <td>10</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_sentence.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>sentence</td>
+  </tr> 
+
+  <tr>
+    <td>11</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_unusual.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>unusual</td>
+  </tr> 
+
+  <tr>
+    <td>12</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_upward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>upward</td>
+  </tr> 
+
+  <tr>
+    <td>13</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_watches.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>watches</td>
+  </tr> 
+
+  <tr>
+    <td>14</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_xray.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>xray</td>
+  </tr> 
+
+  <tr>
+    <td>15</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/original_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ref_yankee.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/ee_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/asa_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F04/unit_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>yankee</td>
+  </tr> 
+
+  </table>
+
+  <!-- MM -->
+  <h3>M07 (intelligibility-low):</h3>
+  <table border="1">
+  <tr>
+    <td>No.</td>
+    <td>Original</td>
+    <td>Reference</td>
+    <td>E2E-DSR</td>
+    <td>ASA-DSR</td>
+    <td>Unit-DSR</td>
+    <td>Text</td>
+  </tr>
+  <!-- FF 1 sample 4 pieces of audios  -->
+  <tr>
+    <td>1</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="demo_wavs/M07/asa_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>advantageous</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>
+      <audio controls>
+      <source src=".demo_wavs/M07/original_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_backspace.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>backspace</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>paragraph</td>
+  </tr>
+
+  <tr>
+    <td>4</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="././demo_wavs/M07/ref_command.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>command</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg5">5</div></td>
+    <td>
+      <audio controls>
+      <source src="" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_delete.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>delete</td>
+  </tr>
+
+  <tr>
+    <td>6</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_downward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>downward</td>
+  </tr>
+
+  <tr>
+    <td>7</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_escape.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>escape</td>
+  </tr>
+
+  <tr>
+    <td>8</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_hotel.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>hotel</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg6">9</div></td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>rabbit</td>
+  </tr>
+
+  <tr>
+    <td>10</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_sentence.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>sentence</td>
+  </tr> 
+
+  <tr>
+    <td>11</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_unusual.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>unusual</td>
+  </tr> 
+
+  <tr>
+    <td>12</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_upward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>upward</td>
+  </tr> 
+
+  <tr>
+    <td>13</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_watches.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>watches</td>
+  </tr> 
+
+  <tr>
+    <td>14</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_xray.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>xray</td>
+  </tr> 
+
+  <tr>
+    <td>15</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/original_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ref_yankee.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/ee_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/asa_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/M07/unit_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>yankee</td>
+  </tr> 
+
+  </table>
+
+  <!-- MM -->
+  <h3>F02 (intelligibility-low):</h3>
+  <table border="1">
+  <tr>
+    <td>No.</td>
+    <td>Original</td>
+    <td>Reference</td>
+    <td>E2E-DSR</td>
+    <td>ASA-DSR</td>
+    <td>Unit-DSR</td>
+    <td>Text</td>
+  </tr>
+  <!-- FF 1 sample 4 pieces of audios  -->
+  <tr>
+    <td>1</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="demo_wavs/F02/asa_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_advantageous.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>advantageous</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>
+      <audio controls>
+      <source src=".demo_wavs/F02/original_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_backspace.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_backspace.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>backspace</td>
+  </tr>
+
+  <tr>
+    <td>3</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_paragraph.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>paragraph</td>
+  </tr>
+
+  <tr>
+    <td>4</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="././demo_wavs/F02/ref_command.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_command.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>command</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg5">5</div></td>
+    <td>
+      <audio controls>
+      <source src="" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_delete.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_delete.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>delete</td>
+  </tr>
+
+  <tr>
+    <td>6</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_downward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_downward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>downward</td>
+  </tr>
+
+  <tr>
+    <td>7</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_escape.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_escape.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>escape</td>
+  </tr>
+
+  <tr>
+    <td>8</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_hotel.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_hotel.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>hotel</td>
+  </tr>
+
+  <tr>
+    <td><div id="eg6">9</div></td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_rabbit.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>rabbit</td>
+  </tr>
+
+  <tr>
+    <td>10</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_sentence.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_sentence.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>sentence</td>
+  </tr> 
+
+  <tr>
+    <td>11</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_unusual.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_unusual.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>unusual</td>
+  </tr> 
+
+  <tr>
+    <td>12</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_upward.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_upward.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>upward</td>
+  </tr> 
+
+  <tr>
+    <td>13</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_watches.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_watches.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>watches</td>
+  </tr> 
+
+  <tr>
+    <td>14</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_xray.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_xray.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>xray</td>
+  </tr> 
+
+  <tr>
+    <td>15</td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/original_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ref_yankee.wav" type="audio/wav">
+      </audio>
+    </td>  
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/ee_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/asa_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>
+      <audio controls>
+      <source src="./demo_wavs/F02/unit_yankee.wav" type="audio/wav">
+      </audio>
+    </td>
+    <td>yankee</td>
+  </tr> 
+
+  </table>
        
 
 </body>
