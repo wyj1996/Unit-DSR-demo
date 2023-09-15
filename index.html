@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unit-DSR-test: textless dysarthric speech reconstruction system by speech units and speech normalization.</title>
+  <title>UNIT-DSR: DYSARTHRIC SPEECH RECONSTRUCTION SYSTEM USING SPEECH UNIT NORMALIZATION</title>
   <style>
 body {
   font-size: 20px;
@@ -16,24 +16,24 @@ audio {
 </style>
 </head>
 <body>
-    <h2>Unit-DSR: textless dysarthric speech reconstruction through speech units and speech normalization</h2>
-    <p><strong>Authors: </strong>Yuejiao WANG, Disong Wang, Xixin Wu, Lingwei MENG, Helen MENG</p>
+    <h2>UNIT-DSR: DYSARTHRIC SPEECH RECONSTRUCTION SYSTEM USING SPEECH UNIT NORMALIZATION</h2>
+    <p><strong>Authors: </strong>Yuejiao Wang, Xixin Wu, Disong Wang, Lingwei Meng, Helen Meng</p>
     
   <hr>
 
     <h2>System comparison</h2>
     <li><strong>Original:</strong> Original dysarthric speech.</li>
-    <li><strong>Reference:</strong> Reference control speech of CF02.</li>
+    <li><strong>Reference:</strong> Healthy reference speech of control speaker CF02.</li>
+    <li><strong>ASR-TTS:</strong> Cascaded DSR pipeline with HuBERT-CTC ASR model and Tacotron 2 TTS model, followed by HiFi-GAN vocoder.</li>
     <li><strong>E2E-DSR:</strong> End-to-end voice conversion via cross-modal knowledge distillation for dysarthric speech reconstruction.</li>
-    <li><strong>ASA-DSR:</strong> Speaker indentity preservation in dysarthric speech reconstruction by adversarial speaker adaptation. </li>
-    <li><strong>Unit-DSR (proposed):</strong> Proposed textless dysarthric speech reconstruction system by speech units and speech normalization. </li>
+    <li><strong>ASA-DSR:</strong> Speaker indentity preservation in dysarthric speech reconstruction by adversarial speaker adaptation, with dysarthric speech fine-tuned ASR model as the content encoder. </li>
+    <li><strong>Unit-DSR (proposed):</strong> A speech unit-based dysarthric speech reconstruction system, which is efficiently fine-tuned from a pre-trained HuBERT backbone using a multi-stage strategy. A unit HiFi-GAN vocoder is utilized for speech generation. </li>
 
   <hr>
-  
-    <h2>Some additional observations and analysis</h2>
-    <li><strong>(1)</strong> The proposed method can effectively </li>
-    <li><strong>(2)</strong> Compared with the ASR-TTS </li>
-  
+    <h2>Diagram of the Unit-DSR system (a), with an example of speech unit normalization (b).</h2>
+    <img src="/data/wangy/Unit-DSR-demo/unit-dsr6.pdf" width="300" height="150">
+
+
   <hr>
 
     <h2>Dysarthric speech reconstruction for different speakers</h2>
